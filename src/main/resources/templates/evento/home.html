@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>EventosApp</title>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="materialize/css/materialize.min.css" media="screen,projection" />
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="style/styleCss.css" />
+</head>
+<body>
+
+	<header>
+		<nav class="menu">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo" style="padding-left: 30px;">Home</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a class="waves-effect waves-light btn"
+						href="/cadastrarEvento"><i class="material-icons left">add_circle_outline</i>Cadastrar
+							Evento</a></li>
+					<li><a href="/listaEventos"
+						class="waves-effect waves-light btn"><i
+							class="material-icons left">format_list_bulleted</i>Lista de
+							Eventos</a></li>
+				</ul>
+			</div>
+		</nav>
+
+	</header>
+
+	<main style="padding-top: 50px;">
+
+	<div class="row">
+		<div class="col s12 m7" style="width: 25.333333% !important; height: 250px;">
+			<div class="card">
+				<div class="card-image">
+					<img src="images/praia.jpg"> <span class="card-title">Festa na Praia</span>
+				</div>
+				<div class="card-content">
+					<p>A maior e mais quente festa do Rio de Janeiro.</p>
+				</div>
+				<div class="card-action">
+					<a href="#">Clique para mais informações</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+
+	<footer class="page-footer" style="padding-top: 20px; color: #fff; background-color: #ee6e73; border: 3px solid gainsboro;     
+	height: 91px; position: absolute; width: 100%; bottom: 0%;">
+			<div class="container" style="padding-bottom: 20px;padding-top: 5px;">
+				© 2014 Roommate <a class="grey-text text-lighten-4 right" href="#!">More
+					Links</a>
+			</div>
+	</footer>
+
+
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+
+
+</html>

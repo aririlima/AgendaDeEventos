@@ -6,7 +6,7 @@ import com.eventosapp.eventosapp.models.Evento;
 
 public interface EventoRepository extends CrudRepository<Evento, String>{
 	
-	public Evento findByCodigo(long codigo);
+	Evento findByCodigo(long codigo);
 	
 	
 }

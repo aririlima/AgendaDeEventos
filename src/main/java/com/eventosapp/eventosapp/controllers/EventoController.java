@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.eventosapp.eventosapp.models.Convidado;
 import com.eventosapp.eventosapp.models.Evento;
+import com.eventosapp.eventosapp.repository.ConvidadoRepository;
 import com.eventosapp.eventosapp.repository.EventoRepository;
 
 @RestController
@@ -18,21 +20,27 @@ public class EventoController {
 	
 	@Autowired
 	private EventoRepository er;
+	@Autowired
+	private ConvidadoRepository cr;
 	
-	
-	@GetMapping(value="/cadastrarEvento")
+	@GetMapping(value="cadastrarEvento")
 	public ModelAndView getCadastroPage() {
 		return new ModelAndView("formEvento");
+	}
+	
+	@GetMapping(value="")
+	public ModelAndView getHome() {
+		return new ModelAndView("home");
 	}
 
 	
 	@PostMapping(value="cadastrarEvento")
 	public ModelAndView cadastro(Evento evento) {
 		if(er.save(evento) != null) {
-			ModelAndView mv = new ModelAndView("/cadastroRealizado");
+			ModelAndView mv = new ModelAndView("evento/cadastroRealizado");
 			return mv;
 		}else {
-			ModelAndView mv = new ModelAndView("/cadastroNaoRealizado");
+			ModelAndView mv = new ModelAndView("evento/cadastroNaoRealizado");
 			return mv;
 		}
 	}
@@ -48,12 +56,15 @@ public class EventoController {
 	}
 	
 	
-	@GetMapping(value="{codigo}")
+	
+	@GetMapping(value="evento/{codigo}")
 	public ModelAndView detalhesEvento(@PathVariable("codigo") long codigo) {		
 		Evento evento = er.findByCodigo(codigo);
-		
-		ModelAndView mv = new ModelAndView("detalhesEvento");
-		mv.addObject("evento", evento.getCodigo());
+		Iterable<Convidado> convidado = cr.findByEvento(evento);
+
+		ModelAndView mv = new ModelAndView("evento/detalhesEvento");
+		mv.addObject("evento", evento);
+		mv.addObject("convidado", convidado);
 
 		System.out.println(codigo);
 		return mv;

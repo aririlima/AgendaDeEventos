@@ -1,7 +1,6 @@
 package com.eventosapp.eventosapp.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,12 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.eventosapp.eventosapp.models.Convidado;
-import com.eventosapp.eventosapp.models.Evento;
 import com.eventosapp.eventosapp.repository.ConvidadoRepository;
 import com.eventosapp.eventosapp.repository.EventoRepository;
 
 @RestController
-@RequestMapping(value="/convidado")
+@RequestMapping(value="/")
 public class ConvidadosController {
 
 	@Autowired
@@ -27,19 +25,33 @@ public class ConvidadosController {
 //		return new ModelAndView("evento/detalhesEvento");
 //	}
 	
-	@PostMapping(value="/{codigo}")
+	@PostMapping(value="evento/{codigo}")
 	public ModelAndView cadastro(Convidado convidado, @PathVariable("codigo") long codigo) {
 		
 		convidado.setEvento(er.findByCodigo(codigo));
 		
 		if(cr.save(convidado) != null) {
-			ModelAndView mv = new ModelAndView("cadastroRealizado");
+			ModelAndView mv = new ModelAndView("evento/cadastroRealizado");
 			return mv;
+			
 		}else {
-			ModelAndView mv = new ModelAndView("cadastroNaoRealizado");
+			ModelAndView mv = new ModelAndView("evento/cadastroNaoRealizado");
 			return mv;
 		}
 	}
+	
+//	@GetMapping(value="evento/{codigo}")
+//	public ModelAndView listaConvidados(@PathVariable("codigo") long codigo) {		
+//		Convidado convidado = cr.findByEvento(codigo);
+//		Evento evento = er.findByCodigo(codigo);
+//		
+//		ModelAndView mv = new ModelAndView("evento/detalhesEvento");
+//		mv.addObject("evento", evento);
+//		mv.addObject("convidado", convidado.getEvento().getCodigo());
+//
+//		System.out.println(codigo);
+//		return mv;
+//	}
 	
 //	@PostMapping(value="cadastraConvidados")
 //	public ModelAndView cadastra(Convidado convidado) {

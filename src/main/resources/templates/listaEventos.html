@@ -49,13 +49,18 @@
 		</head>
 
 		<tbody>
+		<!--
+			@{/convidado/{codigo}(codigo=${evento.codigo})}
+			@{/{urlPagination}/{codigo}( urlPagination=${urlPagination}, codigo=${evento.codigo})}
+		-->
 			<tr th:each="evento : ${eventos}">
-				<td><a href="#" th:href="@{/evento/{evento.codigo}}"><span th:text="${evento.nome}"></span></a></td>
+				<td><a href="#" th:href="@{/evento/{codigo}(codigo=${evento.codigo})}"><span th:text="${evento.nome}"></span></a></td>
 				<td><span th:text="${evento.local}"></span></td>
 				<td><span th:text="${evento.data}"></span></td>
 				<td><span th:text="${evento.horario}"></span></td>
 			</tr>
 		</tbody>
+		</table>
 	</main>
 
 		<footer class="page-footer"

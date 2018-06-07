@@ -9,11 +9,11 @@
 	rel="stylesheet" />
 <!--Import materialize.css-->
 <link type="text/css" rel="stylesheet"
-	href="materialize/css/materialize.min.css" media="screen,projection" />
+	href="../materialize/css/materialize.min.css" media="screen,projection" />
 
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="style/styleCss.css" />
+<link rel="stylesheet" href="../style/styleCss.css" />
 </head>
 <body>
 
@@ -25,7 +25,7 @@
 					<li><a class="waves-effect waves-light btn"
 						href="/cadastrarEvento"><i class="material-icons left">add_circle_outline</i>Cadastrar
 							Evento</a></li>
-					<li><a href="/listaEventos"
+					<li><a href="../listaEventos"
 						class="waves-effect waves-light btn"><i
 							class="material-icons left">format_list_bulleted</i>Lista de
 							Eventos</a></li>
@@ -35,13 +35,60 @@
 
 	</header>
 
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.carousel').carousel();
+});
+
+</script>
+
+  <div class="carousel carousel-slider">
+    <a class="carousel-item" href="#one!"><img src="./images/praia.jpg"></a>
+    <a class="carousel-item" href="#two!"><img src="./images/Aniversário-em-ingles.jpg"></a>
+    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+  </div>
+
 	<main style="padding-top: 50px;">
 
-	<div class="row">
-		<div class="col s12 m7" style="width: 25.333333% !important; height: 250px;">
+	<div class="row" style="margin-top: 100px;">
+		<div class="col s12 m7" style="width: 25.333333% !important; height: 250px; margin-left:30px;">
 			<div class="card">
 				<div class="card-image">
-					<img src="images/praia.jpg"> <span class="card-title">Festa na Praia</span>
+				
+					<img src="praia.jpg"> <span class="card-title">Festa na Praia</span>
+				</div>
+				<div class="card-content">
+					<p>A maior e mais quente festa do Rio de Janeiro.</p>
+				</div>
+				<div class="card-action">
+					<a href="#">Clique para mais informações</a>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="row" style="margin-left: 480px; margin-top: -271px;">
+		<div class="col s12 m7" style="width: 50% !important; height: 250px; ">
+			<div class="card">
+				<div class="card-image">
+				
+					<img src="praia.jpg"> <span class="card-title">Festa na Praia</span>
+				</div>
+				<div class="card-content">
+					<p style="padding: 10px;">A maior e mais quente festa do Rio de Janeiro.</p>
+				</div>
+				<div class="card-action">
+					<a href="#">Clique para mais informações</a>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="row" style="margin-left: 1040px;  margin-top: -271px;  margin-right: 32px;">
+		<div class="col s12 m7" style="width: 100% !important; height: 250px; margin-rigth:100px !important;">
+			<div class="card">
+				<div class="card-image">
+				
+					<img src="praia.jpg"> <span class="card-title">Festa na Praia</span>
 				</div>
 				<div class="card-content">
 					<p>A maior e mais quente festa do Rio de Janeiro.</p>
@@ -54,8 +101,14 @@
 	</div>
 	</main>
 
+	<main style="margin-left: 390px; width: 650px; padding-top: 250px; border-radius: 2px 2px 0 0;">
+      <div class="video-container">
+        <iframe src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+	</main>
+
 	<footer class="page-footer" style="padding-top: 20px; color: #fff; background-color: #ee6e73; border: 3px solid gainsboro;     
-	height: 91px; position: absolute; width: 100%; bottom: 0%;">
+	height: 91px; position: absolute; width: 100%; bottom: -700px;">
 			<div class="container" style="padding-bottom: 20px;padding-top: 5px;">
 				© 2014 Roommate <a class="grey-text text-lighten-4 right" href="#!">More
 					Links</a>
@@ -65,7 +118,7 @@
 
 	<script type="text/javascript"
 		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	<script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
 
 </body>
 

@@ -30,7 +30,7 @@ public class EventoController {
 	
 	@GetMapping(value="")
 	public ModelAndView getHome() {
-		return new ModelAndView("home");
+		return new ModelAndView("evento/home");
 	}
 
 	
@@ -44,6 +44,7 @@ public class EventoController {
 			return mv;
 		}
 	}
+	
 	
 	
 	@GetMapping(value="listaEventos") //oq vem na URL

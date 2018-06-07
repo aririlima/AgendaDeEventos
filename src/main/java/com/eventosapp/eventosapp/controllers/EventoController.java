@@ -60,11 +60,11 @@ public class EventoController {
 	@GetMapping(value="evento/{codigo}")
 	public ModelAndView detalhesEvento(@PathVariable("codigo") long codigo) {		
 		Evento evento = er.findByCodigo(codigo);
-		Iterable<Convidado> convidado = cr.findByEvento(evento);
+		Iterable<Convidado> convidados = cr.findByEvento(evento);
 
 		ModelAndView mv = new ModelAndView("evento/detalhesEvento");
 		mv.addObject("evento", evento);
-		mv.addObject("convidado", convidado);
+		mv.addObject("convidado", convidados);
 
 		System.out.println(codigo);
 		return mv;

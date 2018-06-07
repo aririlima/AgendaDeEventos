@@ -11,11 +11,11 @@
 	rel="stylesheet" />
 <!--Import materialize.css-->
 <link type="text/css" rel="stylesheet"
-	href="materialize/css/materialize.min.css" media="screen,projection" />
+	href="../materialize/css/materialize.min.css" media="screen,projection" />
 
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="style/styleCss.css" />
+<link rel="/stylesheet" href="../style/styleCss.css" />
 </head>
 
 <body>
@@ -43,19 +43,22 @@
 
 	</header>
 	<main style="padding-top: 50px;">
-<!-- 		<table> -->
-<!-- 			<th:block th:each="evento : ${eventos}" class="container"> -->
-<!-- 				<div class="row"> -->
-<!-- 						<p>Nome: <span th:text="${evento.nome}"></span></a></p> -->
-<!-- 						<p>Local: <span th:text="${evento.local}"></span></p> -->
-<!-- 						<p>Data: <span th:text="${evento.data}"></span></p> -->
-<!-- 						<p>Horário: <span th:text="${evento.horario}"></span></p> -->
-<!-- 				</div> -->
-<!-- 		   </th:block> -->
-<!-- 		</table> -->
-		
-		<form class="container" method="post">
-			<h3 style="text-align: center; margin-bottom: 40px;">Formulário de Convidados:</h3>
+	
+ 		
+			<main class="container">
+				<table>
+					<h4 style=" margin-bottom: 40px;">Evento:</h4>
+					<div class="row">
+							<p>Nome: <span th:text="${evento.nome}"></span></a></p>
+							<p>Local: <span th:text="${evento.local}"></span></p>
+							<p>Data: <span th:text="${evento.data}"></span></p>
+							<p>Horário: <span th:text="${evento.horario}"></span></p>
+					</div>
+				</table>
+		</main>
+		</br>
+		<form class="container" method="post" style="margin-left:330px;">
+			<h4 style=" margin-bottom: 40px;">Formulário de Convidados:</h4>
 			<div class="row">
 				<div class="input-field col s3">
 					Nome: <input type="text" value="" name="nomeConvidado" />
@@ -68,16 +71,17 @@
 
 		</form>
 		</main>
-				<br>
+		<br>
+		
 	<main style="padding-top: 50px;">
-
 		<table>
 			<head>
-			<th>Nome:</th>
-			<th>Rg:</th>
-			</head>
+				<th>Nome: </th>
+				<th>Rg: </th>
 	
-			<tbody>			
+			</head>
+
+			<tbody>
 				<tr th:each="convidado : ${convidados}">
 					<td><span th:text="${convidado.nome}"></span></td>
 					<td><span th:text="${convidado.rg}"></span></td>
@@ -85,9 +89,10 @@
 			</tbody>
 		</table>
 	</main>
+		
 
 		<footer class="page-footer"
-			style="padding-top: 20px; color: #fff; background-color: #ee6e73; border: 3px solid gainsboro; height: 91px; position: absolute; width: 100%; bottom: 0%;">
+			style="padding-top: 20px; color: #fff; background-color: #ee6e73; border: 3px solid gainsboro; height: 91px; position: absolute; width: 100%; bottom: -500px;">
 			<div class="container"
 				style="padding-bottom: 20px; padding-top: 5px;">
 				© 2014 Roommate <a class="grey-text text-lighten-4 right" href="#!">More

@@ -16,55 +16,40 @@
 
 <body>
 
-<!-- DETALHES EVENTO -->
-
-
 	<header>
 		<nav class="menu">
 			<div class="nav-wrapper">
 				<a href="#" class="brand-logo" style="padding-left: 30px;">Lista
 					de Eventos:</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="home" class="waves-effect waves-light btn"><i
+					<li><a href="/home" class="waves-effect waves-light btn"><i
 							class="material-icons left">home</i>Home</a></li>
 					<li><a class="waves-effect waves-light btn"
-						href="cadastrarEvento"><i class="material-icons left">add_circle_outline</i>Cadastrar
+						href="/cadastrarEvento"><i class="material-icons left">add_circle_outline</i>Cadastrar
 							Evento</a></li>
-					<li><a href="/evento/listaEventos"
-						class="waves-effect waves-light btn"><i
-							class="material-icons left">format_list_bulleted</i>Lista de
-							Eventos</a></li>
 				</ul>
 			</div>
 		</nav>
 
 	</header>
 	<main style="padding-top: 50px;">
-		<table>
-			<th:block th:each="evento : ${eventos}" class="container">
-				<div class="row">
-						<p>Nome: <span th:text="${evento.nome}"></span></a></p>
-						<p>Local: <span th:text="${evento.local}"></span></p>
-						<p>Data: <span th:text="${evento.data}"></span></p>
-						<p>Horário: <span th:text="${evento.horario}"></span></p>
-				</div>
-		   </th:block>
-		</table>
-		
-		<form class="container" method="post">
-			<h3 style="text-align: center; margin-bottom: 40px;">Formulário de Convidados:</h3>
-			<div class="row">
-				<div class="input-field col s3">
-					Nome: <input type="text" value="" name="nomeConvidado" />
-				</div>
-				<div class="input-field col s3">
-					RG: <input type="text" value="" name="rg" />
-				</div>
-			</div>
-			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+	<table>
+		<head>
+		<th>Nome</th>
+		<th>Local</th>
+		<th>Data</th>
+		<th>Horario</th>
+		</head>
 
-		</form>
-	</main>
+		<tbody>
+			<tr th:each="evento : ${eventos}">
+				<td><a href ="{(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).bild()}"><span th:text="${evento.nome}"></span></a></td>
+				<td><span th:text="${evento.local}"></span></td>
+				<td><span th:text="${evento.data}"></span></td>
+				<td><span th:text="${evento.horario}"></span></td>
+			</tr>
+		</tbody>
+		</main>
 
 		<footer class="page-footer"
 			style="padding-top: 20px; color: #fff; background-color: #ee6e73; border: 3px solid gainsboro; height: 91px; position: absolute; width: 100%; bottom: 0%;">

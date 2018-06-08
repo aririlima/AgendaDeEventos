@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.eventosapp.eventosapp.models.Evento;
+import com.eventosapp.eventosapp.models.Event;
 
 @Service
 public class EventoService {
@@ -19,12 +19,12 @@ public class EventoService {
 		return null;
 	}
 	
-	public List<Evento> listaEvento() {
+	public List<Event> listaEvento() {
 		
 		return null;
 	}
 	
-	public List<Evento> listaConvidados() {
+	public List<Event> listaConvidados() {
 		
 		return null;
 	}

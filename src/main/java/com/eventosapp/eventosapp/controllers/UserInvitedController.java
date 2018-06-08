@@ -7,18 +7,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.eventosapp.eventosapp.models.Convidado;
-import com.eventosapp.eventosapp.repository.ConvidadoRepository;
-import com.eventosapp.eventosapp.repository.EventoRepository;
+import com.eventosapp.eventosapp.models.Invated;
+import com.eventosapp.eventosapp.repository.UserInvatedRepository;
+import com.eventosapp.eventosapp.repository.EventRepository;
+
+//CONTROLLER GERENCIADOR DE CONVITES E USUÁRIOS CONVIDADOS
 
 @RestController
 @RequestMapping(value="/")
-public class ConvidadosController {
+public class UserInvitedController {
 
 	@Autowired
-	private ConvidadoRepository cr;
+	private UserInvatedRepository cr;
 	@Autowired
-	private EventoRepository er;
+	private EventRepository er;
 	
 //	@GetMapping(value="/cadastrarConvidados")
 //	public ModelAndView getCadastroPage() {
@@ -26,7 +28,7 @@ public class ConvidadosController {
 //	}
 	
 	@PostMapping(value="evento/{codigo}")
-	public ModelAndView cadastro(Convidado convidado, @PathVariable("codigo") long codigo) {
+	public ModelAndView cadastro(Invated convidado, @PathVariable("codigo") long codigo) {
 		
 		convidado.setEvento(er.findByCodigo(codigo));
 		
@@ -59,5 +61,4 @@ public class ConvidadosController {
 //		
 //		return new ModelAndView("cadastroRealizado");
 //	}
-	
 }

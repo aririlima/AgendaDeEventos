@@ -8,20 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.eventosapp.eventosapp.models.Convidado;
-import com.eventosapp.eventosapp.models.Evento;
-import com.eventosapp.eventosapp.repository.ConvidadoRepository;
-import com.eventosapp.eventosapp.repository.EventoRepository;
+import com.eventosapp.eventosapp.models.Invated;
+import com.eventosapp.eventosapp.models.Event;
+import com.eventosapp.eventosapp.repository.UserInvatedRepository;
+import com.eventosapp.eventosapp.repository.EventRepository;
+
+//CONTROLLER GERENCIADOR DE EVENTOS
 
 @RestController
 @RequestMapping(value="/")
-public class EventoController {
+public class EventController {
 
 	
 	@Autowired
-	private EventoRepository er;
+	private EventRepository er;
 	@Autowired
-	private ConvidadoRepository cr;
+	private UserInvatedRepository cr;
 	
 	@GetMapping(value="cadastrarEvento")
 	public ModelAndView getCadastroPage() {
@@ -35,7 +37,7 @@ public class EventoController {
 
 	
 	@PostMapping(value="cadastrarEvento")
-	public ModelAndView cadastro(Evento evento) {
+	public ModelAndView cadastro(Event evento) {
 		if(er.save(evento) != null) {
 			ModelAndView mv = new ModelAndView("evento/cadastroRealizado");
 			return mv;
@@ -49,7 +51,7 @@ public class EventoController {
 	
 	@GetMapping(value="listaEventos") //oq vem na URL
 	public ModelAndView listaEventos() {
-		Iterable<Evento> eventos = er.findAll(); 
+		Iterable<Event> eventos = er.findAll(); 
 
 		ModelAndView mv = new ModelAndView("listaEventos"); //página html que é exibida
 		mv.addObject("eventos", eventos);
@@ -60,8 +62,8 @@ public class EventoController {
 	
 	@GetMapping(value="evento/{codigo}")
 	public ModelAndView detalhesEvento(@PathVariable("codigo") long codigo) {		
-		Evento evento = er.findByCodigo(codigo);
-		Iterable<Convidado> convidados = cr.findByEvento(evento);
+		Event evento = er.findByCodigo(codigo);
+		Iterable<Invated> convidados = cr.findByEvento(evento);
 
 		ModelAndView mv = new ModelAndView("evento/detalhesEvento");
 		mv.addObject("evento", evento);

@@ -17,39 +17,38 @@
 </head>
 <body>
 
-	<header>
-		<nav class="menu">
-			<div class="nav-wrapper">
-				<a href="#" class="brand-logo" style="padding-left: 30px;">Cadastro de Eventos:</a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="/" class="waves-effect waves-light btn"><i
-							class="material-icons left">home</i>Home</a></li>
-					<li><a href="/listaEventos"
-						class="waves-effect waves-light btn"><i
-							class="material-icons left">format_list_bulleted</i>Lista de
-							Eventos</a></li>
-				</ul>
-			</div>
-		</nav>
-
-	</header>
 
 	<main style="padding-top: 50px;">
 
 	<div class="container formEvento" style="border: 3px solid gainsboro; padding-top: 45px; padding-bottom: 45px;">
 
 		<form class="container" method="post">
-		<h3 style="text-align: center; margin-bottom: 40px;">Formulário</h3>
+		<h3 style="text-align: center; margin-bottom: 40px;">Formulário de Cadastro</h3>
 			Nome: <input type="text" value="" name="nome" />
 			<div class="row">
 				<div class="input-field col s6">
-					Local: <input type="text" value="" name="local" />
+					Nome: <input type="text" value="" name="nome" />
 				</div>
 				<div class="input-field col s3">
-					Data: <input type="date" value="" name="data" />
+					Sobrenome: <input type="text" value="" name="sobrenome" />
 				</div>
 				<div class="input-field col s3">
-					Horario: <input type="time" value="" name="horario" />
+					E-mail: <input type="text" value="" name="email" />
+				</div>
+				<div class="input-field col s3">
+					CPF: <input type="text" value="" name="cpf" />
+				</div>
+				<div class="input-field col s3">
+					Endereço: <input type="text" value="" name="endereco" />
+				</div>
+				<div class="input-field col s3">
+					Telefone: <input type="text" value="" name="telefone" />
+				</div>
+				<div class="input-field col s3">
+					Senha: <input type="password" value="" name="senha" />
+				</div>
+				<div class="input-field col s3">
+					Data de nascimento: <input type="date" value="" name="nascimento" />
 				</div>
 			</div>
 			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
@@ -57,14 +56,6 @@
 		</form>
 	</div>
 	</main>
-
-	<footer class="page-footer" style="padding-top: 20px; color: #fff; background-color: #ee6e73; border: 3px solid gainsboro;     
-	height: 91px; position: absolute; width: 100%; bottom: 0%;">
-			<div class="container" style="padding-bottom: 20px;padding-top: 5px;">
-				© 2014 Roommate <a class="grey-text text-lighten-4 right" href="#!">More
-					Links</a>
-			</div>
-	</footer>
 
 
 	<script type="text/javascript"

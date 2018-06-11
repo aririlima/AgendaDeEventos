@@ -17,23 +17,17 @@ public class Invated implements Serializable{
 	private static final long serialVersionUID= 1L;
 
 
+
 	@Id
-	private String cpf ;
-	@NotNull
-	private String nomeConvidado;
 	@NotNull
 	private String email;
-	
+	@NotNull
+	private String nomeConvidado;	
 	@ManyToOne
 	private Event evento;
 	
 	
-	public String getCpf() {
-		return cpf;
-	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+
 	public String getNomeConvidado() {
 		return nomeConvidado;
 	}

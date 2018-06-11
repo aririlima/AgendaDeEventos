@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Eventos App</title>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="../materialize/css/materialize.min.css" media="screen,projection" />
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="/stylesheet" href="../style/styleCss.css" />
+</head>
+
+<body onload="document.f.username.focus();">
+
+<!-- LOGIN -->
+
+	<main style="padding-top: 50px;">
+	
+		<h3 style=" margin-bottom: 40px; text-align:center;">Top Events</h4>
+
+<!-- <form name="f" action="/login" method="POST"> -->
+<!-- <table> -->
+<!-- 	<tbody><tr><td>User:</td><td><input type="text" name="username" value=""></td></tr> -->
+<!-- 	<tr><td>Password:</td><td><input type="password" name="password"></td></tr> -->
+<!-- 	<tr><td colspan="2"><input name="submit" type="submit" value="Login"></td></tr> -->
+<!-- </tbody></table> -->
+<!-- </form> -->
+
+		<form action="/login" method="POST" class="container" style="margin-left:470px; margin-top:150px;">
+			<h5 style=" margin-bottom: 40px;">Acesso:</h4>
+			<div class="row">
+				<div class="input-field col s3">
+					E-mail: <input type="text" id="j_login" name="email" />
+				</div>
+				<div class="input-field col s3">
+					Senha: <input type="password" id="j_senha" name="senha"/>
+				</div>
+			</div>
+			<a href="@{/{login}(login=${user.email})/{senha}(senha=${user.senha})}" ><button class="waves-effect waves-light btn" type="submit">Entrar</button>
+
+		</form>
+		</main>
+		<br>
+		<a href="userCadastro" class="brand-logo" style="padding-left:465px;">Cadastre-se aqui</a>
+		
+
+
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>

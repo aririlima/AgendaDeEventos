@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.eventosapp.eventosapp.enums.StatusEvent;
 
@@ -26,11 +29,16 @@ public class Event implements Serializable{
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long codigo;
 	
+	@NotNull
 	private String nome;
 	private String local;
-	private Calendar data;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Calendar data;	
+	@DateTimeFormat(pattern = "HH:mm:ss")
 	private Calendar horarioInicio;
+	@DateTimeFormat(pattern = "HH:mm:ss")
 	private Calendar horarioFim;
+	
 	private StatusEvent status;
 
 	

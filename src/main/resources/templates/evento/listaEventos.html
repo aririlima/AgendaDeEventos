@@ -23,15 +23,15 @@
 <!-- LISTA EVENTOS -->
 
 	<header>
-		<nav class="menu">
+		<nav class="menu" style="background-color:#90caf9;">
 			<div class="nav-wrapper">
 				<a href="#" class="brand-logo" style="padding-left: 30px;">Lista
 					de Eventos:</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="/" class="waves-effect waves-light btn"><i
+					<li><a href="../home" class="waves-effect waves-light btn"><i
 							class="material-icons left">home</i>Home</a></li>
 					<li><a class="waves-effect waves-light btn"
-						href="cadastrarEvento"><i class="material-icons left">add_circle_outline</i>Cadastrar
+						href="cadastroEvento"><i class="material-icons left">add_circle_outline</i>Cadastrar
 							Evento</a></li>
 				</ul>
 			</div>
@@ -56,18 +56,18 @@
 			<tr th:each="evento : ${eventos}">
 				<td><a href="#" th:href="@{/evento/{codigo}(codigo=${evento.codigo})}"><span th:text="${evento.nome}"></span></a></td>
 				<td><span th:text="${evento.local}"></span></td>
-				<td><span th:text="${evento.data}"></span></td>
-				<td><span th:text="${evento.horario}"></span></td>
+				<td><span th:date="${evento.data}"></span></td>
+				<td><span th:date="${evento.horarioInicio}"></span></td>
 			</tr>
 		</tbody>
 		</table>
 	</main>
 
 		<footer class="page-footer"
-			style="padding-top: 20px; color: #fff; background-color: #ee6e73; border: 3px solid gainsboro; height: 91px; position: absolute; width: 100%; bottom: 0%;">
+			style="padding-top: 20px; color: #fff; background-color: #42a5f5; border: 3px solid gainsboro; height: 91px; position: absolute; width: 100%; bottom: 0%;">
 			<div class="container"
 				style="padding-bottom: 20px; padding-top: 5px;">
-				© 2014 Roommate <a class="grey-text text-lighten-4 right" href="#!">More
+				© 2014 Top Events <a class="grey-text text-lighten-4 right" href="#!">More
 					Links</a>
 			</div>
 		</footer>

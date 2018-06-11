@@ -11,6 +11,10 @@ public interface UserRepository extends CrudRepository<User, String>{
 	
 	User findByEmail(String email);
 	
+	//Role findById();
+	
+	//Role save(Role role);
+	
 	//Returns the number of entities available.
 	long count();
 	

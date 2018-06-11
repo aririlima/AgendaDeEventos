@@ -33,11 +33,11 @@ public class UserInvitedController {
 		convidado.setEvento(er.findByCodigo(codigo));
 		
 		if(cr.save(convidado) != null) {
-			ModelAndView mv = new ModelAndView("evento/cadastroRealizado");
+			ModelAndView mv = new ModelAndView("global/cadastroRealizado");
 			return mv;
 			
 		}else {
-			ModelAndView mv = new ModelAndView("evento/cadastroNaoRealizado");
+			ModelAndView mv = new ModelAndView("global/cadastroNaoRealizado");
 			return mv;
 		}
 	}

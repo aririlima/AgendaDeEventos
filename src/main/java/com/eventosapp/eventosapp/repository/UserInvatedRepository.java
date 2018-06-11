@@ -8,7 +8,7 @@ import com.eventosapp.eventosapp.models.Event;
 //REPOSITÓRIO DE USUÁRIOS CADASTRADOS AO SISTEMA CONVIDADOS
 public interface UserInvatedRepository extends CrudRepository<Invated, String>{
 		
-	Invated findByCpf(String cpf);
+	Invated findByEmail(String email);
 	Iterable<Invated> findByEvento(Event evento);
 	
 }

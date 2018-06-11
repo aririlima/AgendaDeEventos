@@ -24,16 +24,16 @@
 
 
 	<header>
-		<nav class="menu">
+		<nav class="menu" style="background-color:#90caf9;">
 			<div class="nav-wrapper">
 				<a href="#" class="brand-logo" style="padding-left: 30px;">Detalhes Eventos:</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="../home" class="waves-effect waves-light btn"><i
 							class="material-icons left">home</i>Home</a></li>
 					<li><a class="waves-effect waves-light btn"
-						href="../cadastrarEvento"><i class="material-icons left">add_circle_outline</i>Cadastrar
+						href="/cadastroEvento"><i class="material-icons left">add_circle_outline</i>Cadastrar
 							Evento</a></li>
-					<li><a href="../listaEventos"
+					<li><a href="/listaEventos"
 						class="waves-effect waves-light btn"><i
 							class="material-icons left">format_list_bulleted</i>Lista de
 							Eventos</a></li>
@@ -52,7 +52,7 @@
 							<p>Nome: <span th:text="${evento.nome}"></span></a></p>
 							<p>Local: <span th:text="${evento.local}"></span></p>
 							<p>Data: <span th:text="${evento.data}"></span></p>
-							<p>Horário: <span th:text="${evento.horario}"></span></p>
+							<p>Horário: <span th:text="${evento.horarioInicio}"></span></p>
 					</div>
 				</table>
 		</main>
@@ -64,7 +64,7 @@
 					Nome: <input type="text" value="" name="nomeConvidado" />
 				</div>
 				<div class="input-field col s3">
-					RG: <input type="text" value="" name="rg" />
+					E-mail: <input type="text" value="" name="email" />
 				</div>
 			</div>
 			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
@@ -79,14 +79,14 @@
 			<h4 style=" margin-bottom: 40px;">Convidados:</h4>
 			<head>
 				<th>Nome: </th>
-				<th>Rg: </th>
+				<th>E-mail: </th>
 	
 			</head>
 
 			<tbody>
 				<tr th:each="convidado : ${convidados}">
 					<td><span th:text="${convidado.nome}"></span></td>
-					<td><span th:text="${convidado.rg}"></span></td>
+					<td><span th:text="${convidado.email}"></span></td>
 				</tr>
 			</tbody>
 			
@@ -96,10 +96,10 @@
 		
 
 		<footer class="page-footer"
-			style="padding-top: 20px; color: #fff; background-color: #ee6e73; border: 3px solid gainsboro; height: 91px; position: absolute; width: 100%; bottom: -500px;">
+			style="padding-top: 20px; color: #fff; background-color: #42a5f5; border: 3px solid gainsboro; height: 91px; position: absolute; width: 100%; bottom: -500px;">
 			<div class="container"
 				style="padding-bottom: 20px; padding-top: 5px;">
-				© 2014 Roommate <a class="grey-text text-lighten-4 right" href="#!">More
+				© 2014 Top Events <a class="grey-text text-lighten-4 right" href="#!">More
 					Links</a>
 			</div>
 		</footer>

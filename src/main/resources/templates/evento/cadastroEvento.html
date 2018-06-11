@@ -17,13 +17,13 @@
 </head>
 <body>
 
-<!-- cADASTRO DE EVENTO (FORMEVENTO) -->
+<!-- CADASTRO DE EVENTO (FORMEVENTO) -->
 	<header>
-		<nav class="menu">
+		<nav class="menu" style="background-color:#b39ddb;">
 			<div class="nav-wrapper">
 				<a href="#" class="brand-logo" style="padding-left: 30px;">Cadastro de Eventos:</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="home" class="waves-effect waves-light btn"><i
+					<li><a href="../home" class="waves-effect waves-light btn"><i
 							class="material-icons left">home</i>Home</a></li>
 					<li><a href="listaEventos"
 						class="waves-effect waves-light btn"><i
@@ -46,12 +46,32 @@
 				<div class="input-field col s6">
 					Local: <input type="text" value="" name="local" />
 				</div>
-				<div class="input-field col s3">
+				<div class="input-field col s3" style="padding-left: 30px; width: 50%;">
 					Data: <input type="date" value="" name="data" />
 				</div>
-				<div class="input-field col s3">
-					Horario: <input type="time" value="" name="horario" />
+				<div class="input-field col s3" style="padding-left: 12px; width: 50%;">
+					Horario de Início: <input type="time" value="" name="horarioInicio" />
 				</div>
+				<div class="input-field col s3" style="padding-left: 30px; width: 50%; ">
+					Horario de Término: <input type="time" value="" name="horarioTermino" />
+				</div>
+
+				<div class="input-field col s3" style="padding-left: 30px; margin-bottom: 15px; width: 50%;">
+			
+			    	<p>
+			      		<label>
+			        		<input name="group1" type="radio" value="PRIVATE" checked />
+			        		<span>Privado</span>
+			      		</label>
+			    	</p>
+			    	<p>
+			      		<label>
+			        		<input name="group1" type="radio" value="PUBLIC" />
+			        		<span>Público</span>
+			      		</label>
+			    	</p>
+				</div>
+
 			</div>
 			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
 
@@ -59,7 +79,7 @@
 	</div>
 	</main>
 
-	<footer class="page-footer" style="padding-top: 20px; color: #fff; background-color: #ee6e73; border: 3px solid gainsboro;     
+	<footer class="page-footer" style="padding-top: 20px; color: #fff; background-color: #d1c4e9; border: 3px solid gainsboro;     
 	height: 91px; position: absolute; width: 100%; bottom: 0%;">
 			<div class="container" style="padding-bottom: 20px;padding-top: 5px;">
 				© 2014 Roommate <a class="grey-text text-lighten-4 right" href="#!">More

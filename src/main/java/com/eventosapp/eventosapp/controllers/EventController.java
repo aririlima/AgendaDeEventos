@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.eventosapp.eventosapp.models.Invated;
+import com.eventosapp.eventosapp.enums.StatusEvent;
 import com.eventosapp.eventosapp.models.Event;
-import com.eventosapp.eventosapp.repository.UserInvatedRepository;
+import com.eventosapp.eventosapp.models.Invated;
 import com.eventosapp.eventosapp.repository.EventRepository;
+import com.eventosapp.eventosapp.repository.UserInvatedRepository;
 
 //CONTROLLER GERENCIADOR DE EVENTOS
 
@@ -25,24 +26,26 @@ public class EventController {
 	@Autowired
 	private UserInvatedRepository cr;
 	
-	@GetMapping(value="cadastrarEvento")
+	@GetMapping(value="cadastroEvento")
 	public ModelAndView getCadastroPage() {
-		return new ModelAndView("formEvento");
+		return new ModelAndView("evento/cadastroEvento");
 	}
 	
-	@GetMapping(value="")
+	@GetMapping(value="home")
 	public ModelAndView getHome() {
-		return new ModelAndView("evento/home");
+		return new ModelAndView("global/home");
 	}
 
 	
-	@PostMapping(value="cadastrarEvento")
-	public ModelAndView cadastro(Event evento) {
+	@PostMapping(value="cadastroEvento")
+	public ModelAndView cadastro(Event evento, StatusEvent se) {
+		System.out.println(se);
+		evento.setStatus(se);
 		if(er.save(evento) != null) {
-			ModelAndView mv = new ModelAndView("evento/cadastroRealizado");
+			ModelAndView mv = new ModelAndView("global/cadastroRealizado");
 			return mv;
 		}else {
-			ModelAndView mv = new ModelAndView("evento/cadastroNaoRealizado");
+			ModelAndView mv = new ModelAndView("global/cadastroNaoRealizado");
 			return mv;
 		}
 	}
@@ -53,7 +56,7 @@ public class EventController {
 	public ModelAndView listaEventos() {
 		Iterable<Event> eventos = er.findAll(); 
 
-		ModelAndView mv = new ModelAndView("listaEventos"); //página html que é exibida
+		ModelAndView mv = new ModelAndView("evento/listaEventos"); //página html que é exibida
 		mv.addObject("eventos", eventos);
 		return mv;
 	}
